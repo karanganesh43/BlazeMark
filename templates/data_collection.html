@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Collection</title>
+</head>
+<body>
+    <form action="/" method="post" enctype="multipart/form-data">
+        <!-- Sample form fields for data collection -->
+        <input type="file" name="photo" placeholder="Upload Geotagged Photo" required>
+        <input type="datetime-local" name="date_time" required>
+        <select name="landscape_position">
+            <option value="flat">Flat / undulating</option>
+            <option value="ridge">Ridge or hill</option>
+            <!-- ... Other options ... -->
+        </select>
+        <select name="vegetation_type">
+            <option value="eucalypt_fern">Eucalypt forest (fern or herb)</option>
+            <!-- ... Other options ... -->
+        </select>
+        <select name="burn_severity">
+            <option value="unburnt">Unburnt</option>
+            <!-- ... Other options ... -->
+        </select>
+        <select name="ground_layer_recovery">
+            <option value="unburnt">Unburnt</option>
+            <!-- ... Other options ... -->
+        </select>
+        <!-- ... Add other fields in a similar way ... -->
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Display saved observations (simulate syncing) -->
+    <hr>
+    <h2>Observations</h2>
+    <ul>
+    {% for obs in observations %}
+        <li>{{ obs.date_time }} - {{ obs.landscape_position }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
