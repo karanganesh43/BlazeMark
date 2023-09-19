@@ -54,3 +54,6 @@ def sync():
 if __name__ == "__main__":
     # Run the Flask application.
     app.run(debug=True)
+
+# To run the app, run the following command in the terminal:
+# python3 app.py
