@@ -5,36 +5,50 @@
 </head>
 <body>
     <form action="/" method="post" enctype="multipart/form-data">
-        <!-- Sample form fields for data collection -->
-        <input type="file" name="photo" placeholder="Upload Geotagged Photo" required>
-        <input type="datetime-local" name="date_time" required>
-        <select name="landscape_position">
-            <option value="flat">Flat / undulating</option>
-            <option value="ridge">Ridge or hill</option>
-            <!-- ... Other options ... -->
+        <input type="file" name="photo" required>
+        <input type="datetime-local" name="datetime" required>
+        
+        <!-- Landscape Position -->
+        <select name="landscape_position" required>
+            <option value="flat_undulating">Flat / undulating</option>
+            <option value="ridge_hill">Ridge or hill</option>
+            <option value="slope">Slope</option>
+            <option value="valley_gully">Valley / gully</option>
         </select>
-        <select name="vegetation_type">
-            <option value="eucalypt_fern">Eucalypt forest (fern or herb)</option>
-            <!-- ... Other options ... -->
+
+        <!-- Vegetation Type and Development stage -->
+        <select name="vegetation_type" required>
+            <option value="eucalypt_fern_herb">Eucalypt forest (fern or herb)</option>
+            <option value="eucalypt_grassy">Eucalypt forest (grassy)</option>
+            <!-- ... other vegetation types ... -->
         </select>
-        <select name="burn_severity">
-            <option value="unburnt">Unburnt</option>
-            <!-- ... Other options ... -->
+
+        <select name="development_stage" required>
+            <option value="old">Old</option>
+            <!-- ... other development stages ... -->
         </select>
-        <select name="ground_layer_recovery">
-            <option value="unburnt">Unburnt</option>
-            <!-- ... Other options ... -->
-        </select>
-        <!-- ... Add other fields in a similar way ... -->
+        
+        <!-- Other fields... -->
+        <!-- This is a mockup, not all fields are included for brevity, but you can expand following the same pattern -->
+
+        <input type="text" name="species_name" placeholder="Species Name or Animal Type" required>
+        <input type="text" name="bird_animal_calls" placeholder="Record of Bird or Animal Calls">
+        <input type="text" name="flowering_plants_state" placeholder="State of Flowering Plants">
+
+        <!-- Optional fields -->
+        <input type="text" name="altitude" placeholder="Altitude">
+        <input type="text" name="barometric_pressure" placeholder="Barometric Pressure">
+        <input type="text" name="compass_direction" placeholder="Compass Direction">
+        <input type="text" name="accelerometer_data" placeholder="Accelerometer Data">
+
         <input type="submit" value="Submit">
     </form>
 
-    <!-- Display saved observations (simulate syncing) -->
     <hr>
     <h2>Observations</h2>
     <ul>
     {% for obs in observations %}
-        <li>{{ obs.date_time }} - {{ obs.landscape_position }}</li>
+        <li>{{ obs.datetime }} - {{ obs.landscape_position }}</li>
     {% endfor %}
     </ul>
 </body>
