@@ -5,41 +5,102 @@
 </head>
 <body>
     <form action="/" method="post" enctype="multipart/form-data">
-        <input type="file" name="photo" required>
-        <input type="datetime-local" name="datetime" required>
-        
-        <!-- Landscape Position -->
-        <select name="landscape_position" required>
+        <label for="photo">Geotagged Photo:</label>
+        <input type="file" name="photo" id="photo" required><br><br>
+
+        <label for="datetime">Date and Time:</label>
+        <input type="datetime-local" name="datetime" id="datetime" required><br><br>
+
+        <label for="landscape_position">Landscape Position:</label>
+        <select name="landscape_position" id="landscape_position" required>
             <option value="flat_undulating">Flat / undulating</option>
             <option value="ridge_hill">Ridge or hill</option>
             <option value="slope">Slope</option>
             <option value="valley_gully">Valley / gully</option>
-        </select>
+        </select><br><br>
 
-        <!-- Vegetation Type and Development stage -->
-        <select name="vegetation_type" required>
+        <label for="vegetation_type">Vegetation Type:</label>
+        <select name="vegetation_type" id="vegetation_type" required>
             <option value="eucalypt_fern_herb">Eucalypt forest (fern or herb)</option>
             <option value="eucalypt_grassy">Eucalypt forest (grassy)</option>
-            <!-- ... other vegetation types ... -->
-        </select>
+            <option value="eucalypt_shrubby">Eucalypt forest (shrubby)</option>
+            <option value="rainforest">Rainforest</option>
+            <option value="riparian">Riparian</option>
+        </select><br><br>
 
-        <select name="development_stage" required>
+        <label for="development_stage">Development Stage:</label>
+        <select name="development_stage" id="development_stage" required>
             <option value="old">Old</option>
-            <!-- ... other development stages ... -->
-        </select>
-        
-        <!-- Other fields... -->
-        <!-- This is a mockup, not all fields are included for brevity, but you can expand following the same pattern -->
+            <option value="mature">Mature</option>
+            <option value="regrowth">Regrowth</option>
+            <option value="mixed">Mixed</option>
+            <option value="few_trees_present">Few trees present</option>
+        </select><br><br>
 
-        <input type="text" name="species_name" placeholder="Species Name or Animal Type" required>
-        <input type="text" name="bird_animal_calls" placeholder="Record of Bird or Animal Calls">
-        <input type="text" name="flowering_plants_state" placeholder="State of Flowering Plants">
+        <label for="burn_severity">Burn Severity:</label>
+        <select name="burn_severity" id="burn_severity" required>
+            <option value="unburnt">Unburnt</option>
+            <option value="low">Low</option>
+            <option value="moderate">Moderate</option>
+            <option value="high">High</option>
+            <option value="extreme">Extreme</option>
+        </select><br><br>
 
-        <!-- Optional fields -->
-        <input type="text" name="altitude" placeholder="Altitude">
-        <input type="text" name="barometric_pressure" placeholder="Barometric Pressure">
-        <input type="text" name="compass_direction" placeholder="Compass Direction">
-        <input type="text" name="accelerometer_data" placeholder="Accelerometer Data">
+        <label for="ground_layer_recovery">Ground Layer Recovery:</label>
+        <select name="ground_layer_recovery" id="ground_layer_recovery" required>
+            <option value="unburnt">Unburnt</option>
+            <option value="new_growth_visible">New Growth visible</option>
+            <option value="no_new_growth">No new growth</option>
+            <option value="no_ground_cover_present">No ground cover present</option>
+        </select><br><br>
+
+        <label for="shrub_layer_recovery">Shrub Layer Recovery:</label>
+        <select name="shrub_layer_recovery" id="shrub_layer_recovery" required>
+            <option value="unburnt">Unburnt</option>
+            <option value="shoots_present">Shoots present</option>
+            <option value="seedlings_present">Seedlings present</option>
+            <option value="both_shoots_and_seedlings">Both shoots and seedlings present</option>
+            <option value="no_shoots_or_seedlings">No shoots or seedlings present</option>
+            <option value="no_shrub_layer">No shrub layer present</option>
+        </select><br><br>
+
+        <label for="sub_canopy_recovery">Sub Canopy Layer Recovery:</label>
+        <select name="sub_canopy_recovery" id="sub_canopy_recovery" required>
+            <option value="unburnt">Unburnt</option>
+            <option value="shoots_present">Shoots present</option>
+            <option value="no_shoots_present">No shoots present</option>
+            <option value="no_sub_canopy">No sub canopy present</option>
+        </select><br><br>
+
+        <label for="tallest_tree_recovery">Tallest Tree Layer Recovery:</label>
+        <select name="tallest_tree_recovery" id="tallest_tree_recovery" required>
+            <option value="unburnt">Unburnt</option>
+            <option value="basal_shoots_present">Basal shoots present</option>
+            <option value="epicormic_shoots_present">Epicormic shoots present</option>
+            <option value="both_epicormic_and_basal">Epicormic and basal shoots present</option>
+            <option value="no_shoots_present">No epicormic or basal shoots present</option>
+        </select><br><br>
+
+        <label for="species_name">Species Name or Animal Type:</label>
+        <input type="text" name="species_name" id="species_name" placeholder="Species Name or Animal Type" required><br><br>
+
+        <label for="bird_animal_calls">Record of Bird or Animal Calls:</label>
+        <input type="text" name="bird_animal_calls" id="bird_animal_calls" placeholder="Bird or Animal Calls"><br><br>
+
+        <label for="flowering_plants_state">State of Flowering Plants:</label>
+        <input type="text" name="flowering_plants_state" id="flowering_plants_state" placeholder="State of Flowering Plants"><br><br>
+
+        <label for="altitude">Altitude:</label>
+        <input type="text" name="altitude" id="altitude" placeholder="Altitude"><br><br>
+
+        <label for="barometric_pressure">Barometric Pressure:</label>
+        <input type="text" name="barometric_pressure" id="barometric_pressure" placeholder="Barometric Pressure"><br><br>
+
+        <label for="compass_direction">Compass Direction:</label>
+        <input type="text" name="compass_direction" id="compass_direction" placeholder="Compass Direction"><br><br>
+
+        <label for="accelerometer_data">Accelerometer Data:</label>
+        <input type="text" name="accelerometer_data" id="accelerometer_data" placeholder="Accelerometer Data"><br><br>
 
         <input type="submit" value="Submit">
     </form>
